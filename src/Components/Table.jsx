@@ -7,7 +7,7 @@ function Overview({ result }) {
         <h2 className="text-center font-bold text-2xl text-stone-800">Results</h2>
         <div>
           <span className="bg-red-100 text-red-800 text-lg font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
-            {result.length} Detected
+            {result.matches.length} Detected
           </span>
         </div>
       </div>
@@ -23,7 +23,7 @@ function Overview({ result }) {
           </tr>
         </thead>
         <tbody>
-          {result.map((item, index) => (
+          {result.matches.map((item, index) => (
             <TableRow name={item} key={index} />
           ))}
         </tbody>

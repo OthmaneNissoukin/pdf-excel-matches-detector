@@ -29,7 +29,7 @@ export default function FormFile({ setResult }) {
         setFeedback({ type, message: message });
 
         if (type.toLowerCase() === "success") {
-          setResult(res.payload);
+          setResult({ submitted: true, matches: res.payload });
         }
       } catch (error) {
         console.log(error);

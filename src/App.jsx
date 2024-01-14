@@ -5,20 +5,20 @@ import Header from "./ui/Header";
 import Button from "./ui/Button";
 
 function App() {
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState({ submitted: false, matches: [] });
 
   return (
     <>
       <Header />
 
-      {result.length > 0 && (
+      {result.submitted && (
         <div className="max-w-xl mx-auto mb-5 flex justify-between items-center px-5">
           <h1 className="font-bold text-3xl text-stone-800">Detect Matches</h1>
           <Button onClick={() => setResult([])}>Start New</Button>
         </div>
       )}
 
-      {result.length ? <Overview result={result} /> : <FormFile setResult={setResult} />}
+      {result.submitted ? <Overview result={result} /> : <FormFile setResult={setResult} />}
     </>
   );
 }
